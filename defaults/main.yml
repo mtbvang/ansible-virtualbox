@@ -2,3 +2,4 @@
 ---
 virtualbox_version: 5.1
 virtualbox_install: []
+virtualbox_validate_certs: yes

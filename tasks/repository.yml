@@ -5,6 +5,7 @@
     id: "{{ item.id }}"
     url: "{{ item.url }}"
     state: present
+    validate_certs: "{{ virtualbox_validate_certs }}"
   with_items: "{{ virtualbox_public_keys }}"
   tags:
     - virtualbox-repository-public-key
@@ -14,6 +15,7 @@
     repo: "{{ item.type }} {{ item.url }} {{ item.component }}"
     state: present
     update_cache: true
+    validate_certs: "{{ virtualbox_validate_certs }}"
   with_items: "{{ virtualbox_repositories }}"
   tags:
     - virtualbox-repository-add
