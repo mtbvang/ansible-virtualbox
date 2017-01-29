@@ -3,7 +3,7 @@
 - name: Remove virtualbox versions that conflict with 5.1
   apt:  
     name: "{{item}}"
-    state: removed
+    state: absent
   with_items:
     -  virtualbox 
     - virtualbox-5.0 
