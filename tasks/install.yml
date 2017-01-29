@@ -1,15 +1,5 @@
 # tasks file for virtualbox
 ---
-- name: Remove virtualbox versions that conflict with 5.1
-  apt:  
-    name: "{{item}}"
-    state: absent
-  with_items:
-    - virtualbox 
-    - virtualbox-5.0 
-    - virtualbox-4.*
-  when: virtualbox_version == 5.1
-  
 - name: install dependencies
   apt:
     name: "{{ item }}"
