@@ -9,6 +9,8 @@
   with_items: "{{ virtualbox_public_keys }}"
   tags:
     - virtualbox-repository-public-key
+  environment: "{{ proxy_env }}"
+  
 
 - name: add virtualbox repository
   apt_repository:
