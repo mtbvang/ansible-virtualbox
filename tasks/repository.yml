@@ -1,5 +1,10 @@
 # tasks file for virtualbox
 ---
+- name: Debug variables
+  debug:
+    var: virtualbox_proxy_env
+    verbosity: 1
+    
 - name: add public key
   apt_key:
     id: "{{ item.id }}"
@@ -9,7 +14,7 @@
   with_items: "{{ virtualbox_public_keys }}"
   tags:
     - virtualbox-repository-public-key
-  environment: "{{ proxy_env }}"
+  environment: "{{ virtualbox_proxy_env }}"
   
 
 - name: add virtualbox repository
